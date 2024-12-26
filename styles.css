@@ -1,10 +1,10 @@
 /* General Styling */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Creepster', cursive, sans-serif; /* Horror-themed font */
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0a0a0f, #1a1c3a, #4a193e);
-    color: #d0d0d0; /* Subtle gray for standard text */
+    background: linear-gradient(135deg, #000000, #1a1a1a, #3b1f1f);
+    color: #d0d0d0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,117 +12,112 @@ body {
     text-align: center;
     overflow-x: hidden;
     box-sizing: border-box;
+    cursor: url('https://cur.cursors-4u.net/horror/hor-2/hor138.cur'), auto; /* Creepy custom cursor */
 }
 
-/* Responsive Containers */
-.password-container, .content-section {
-    padding: 40px 30px;
+/* Horror-Themed Container */
+.password-container {
+    padding: 40px;
     border-radius: 15px;
-    background: rgba(20, 20, 30, 0.95);
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5), 0 0 30px rgba(0, 0, 255, 0.3);
+    background: rgba(15, 15, 25, 0.9);
+    box-shadow: 0 0 20px red, 0 0 40px #0000ff;
+    border: 2px solid rgba(255, 0, 0, 0.5);
     width: 90%;
     max-width: 400px;
-    margin: 20px auto;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: flicker 1.5s infinite alternate;
+    position: relative;
+    overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .password-container, .content-section {
-        max-width: 600px;
-        padding: 50px;
+/* Flickering Animation */
+@keyframes flicker {
+    0%, 100% {
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #0000ff;
+    }
+    50% {
+        box-shadow: 0 0 30px red, 0 0 50px #0000ff;
     }
 }
 
 /* Neon Heading */
 .neon-heading {
-    font-size: 2.5em;
-    color: #1e90ff; /* Electric blue */
-    text-shadow: 0 0 15px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #ff0000, 0 0 50px #ff0000;
+    font-size: 2.8em;
+    color: red; /* Blood red */
+    text-shadow: 0 0 20px red, 0 0 40px crimson, 0 0 50px #ff0000, 0 0 60px darkred;
     font-weight: bold;
     margin-bottom: 15px;
+    animation: pulse 3s infinite;
 }
 
-/* Subtext */
+/* Neon Subtext */
 .neon-subtext {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    color: crimson;
+    text-shadow: 0 0 10px crimson, 0 0 30px darkred;
     margin-bottom: 25px;
-    color: #ff4545; /* Bright red */
-    text-shadow: 0 0 10px #ff4545, 0 0 20px #ff1212;
     line-height: 1.5;
+}
+
+/* Pulse Animation for the Title */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px red, 0 0 20px crimson;
+    }
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 40px darkred, 0 0 80px crimson;
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Input Styling */
 .password-input {
     width: 100%;
     padding: 15px;
-    margin: 15px 0;
+    margin: 20px 0;
     font-size: 1em;
-    border: none;
+    border: 1px solid red;
     border-radius: 10px;
-    background: rgba(15, 15, 25, 0.9);
-    color: #1e90ff; /* Electric blue input text */
+    background: rgba(15, 15, 25, 0.8);
+    color: crimson;
     outline: none;
-    box-shadow: 0 0 10px rgba(30, 144, 255, 0.4);
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.password-input::placeholder {
-    color: #667799; /* Subtle gray for placeholder */
+    box-shadow: 0 0 10px crimson;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .password-input:focus {
-    box-shadow: 0 0 15px rgba(30, 144, 255, 0.7), 0 0 25px rgba(255, 0, 0, 0.5);
-    transform: scale(1.02);
-}
-
-/* Error Message */
-.error-message {
-    margin-top: 10px;
-    color: #ff1212; /* Intense red for errors */
-    opacity: 0;
-    transition: opacity 0.3s;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px red, 0 0 30px crimson;
 }
 
 /* Neon Button */
 .neon-button {
-    display: inline-block;
     padding: 12px 25px;
     font-size: 1.2em;
     font-weight: bold;
-    background: linear-gradient(90deg, #1e90ff, #ff4545, #4a193e);
+    background: linear-gradient(90deg, red, crimson);
+    color: white;
     border: none;
     border-radius: 10px;
-    color: #fff; /* White text for buttons */
+    box-shadow: 0 0 15px red, 0 0 30px crimson;
     cursor: pointer;
-    box-shadow: 0 0 15px #1e90ff, 0 0 30px #ff4545, 0 0 40px #4a193e;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .neon-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 25px #1e90ff, 0 0 40px #ff4545, 0 0 50px #4a193e;
+    box-shadow: 0 0 30px red, 0 0 50px crimson;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: rgba(255, 255, 255, 0.7);
+/* Error Message */
+.error-message {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #ff0000;
+    text-shadow: 0 0 10px red;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-    .neon-heading {
-        font-size: 1.8em;
-    }
-
-    .neon-subtext {
-        font-size: 1em;
-    }
-
-    .neon-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-}
-
