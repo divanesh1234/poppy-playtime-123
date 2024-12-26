@@ -8,19 +8,19 @@
     <script>
         function validatePassword() {
             const password = document.getElementById("password").value.trim();
-            const correctPassword = "huggy wuggy"; // Replace with your actual password
+            const correctPassword = "huggy wuggy";
 
             const error = document.getElementById("error");
             if (!password) {
-                error.textContent = "Password field cannot be empty.";
+                error.textContent = "The password field is empty... Try again.";
                 error.style.opacity = "1";
                 return;
             }
 
-            if (password === correctPassword) {
-                window.location.href = "download.html"; // Redirect to the download page
+            if (password.toLowerCase() === correctPassword) {
+                window.location.href = "download.html";
             } else {
-                error.textContent = "Incorrect password. Please try again.";
+                error.textContent = "Incorrect password... Something’s watching.";
                 error.style.opacity = "1";
             }
         }
@@ -28,10 +28,10 @@
 </head>
 <body>
     <div class="password-container">
-        <h1 class="neon-heading">Secure Access Portal</h1>
-        <p class="neon-subtext">Enter the password to proceed:</p>
-        <input type="password" id="password" placeholder="Enter Password" class="password-input">
-        <button onclick="validatePassword()" class="neon-button">Submit</button>
+        <h1 class="neon-heading">ENTER THE DARKNESS</h1>
+        <p class="neon-subtext">The key is in your hands... or is it?</p>
+        <input type="password" id="password" placeholder="Enter the cursed password" class="password-input">
+        <button onclick="validatePassword()" class="neon-button">Unlock</button>
         <p id="error" class="error-message"></p>
     </div>
 </body>
