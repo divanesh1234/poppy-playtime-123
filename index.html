@@ -7,20 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function validatePassword() {
-            const password = document.getElementById("password").value.trim();
-            const correctPassword = "huggy wuggy";
+            const password = document.getElementById("password").value;
+            const correctPassword = "huggy wuggy"; // Replace with your actual password
 
-            const error = document.getElementById("error");
-            if (!password) {
-                error.textContent = "The password field is empty... Try again.";
-                error.style.opacity = "1";
-                return;
-            }
-
-            if (password.toLowerCase() === correctPassword) {
-                window.location.href = "download.html";
+            if (password.toLowerCase() === correctPassword.toLowerCase()) {
+                window.location.href = "download.html"; // Redirect to the download page
             } else {
-                error.textContent = "Incorrect password... Something’s watching.";
+                const error = document.getElementById("error");
+                error.textContent = "Incorrect password. Please try again.";
                 error.style.opacity = "1";
             }
         }
@@ -28,11 +22,12 @@
 </head>
 <body>
     <div class="password-container">
-        <h1 class="neon-heading">ENTER THE CORRECT PASSWORD</h1>
-        <p class="neon-subtext">Hint: The password is the name of the main character from Poppy Playtime</p>
-        <input type="password" id="password" placeholder="Enter the password" class="password-input">
-        <button onclick="validatePassword()" class="neon-button">Unlock</button>
+        <h1 class="neon-heading">Welcome to the Nightmare Portal</h1>
+        <p class="neon-subtext">Enter the password to unlock your fate:</p>
+        <input type="password" id="password" placeholder="Enter Password" class="password-input">
+        <button onclick="validatePassword()" class="neon-button">Submit</button>
         <p id="error" class="error-message"></p>
+        <p class="password-hint">Hint: The password is the name of the main character from <em>Poppy Playtime</em>.</p>
     </div>
 </body>
 </html>
