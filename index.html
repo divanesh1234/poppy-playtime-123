@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function validatePassword() {
-            const password = document.getElementById("password").value;
+            const password = document.getElementById("password").value.trim();
             const correctPassword = "huggy wuggy"; // Replace with your actual password
+
+            const error = document.getElementById("error");
+            if (!password) {
+                error.textContent = "Password field cannot be empty.";
+                error.style.opacity = "1";
+                return;
+            }
 
             if (password === correctPassword) {
                 window.location.href = "download.html"; // Redirect to the download page
             } else {
-                const error = document.getElementById("error");
                 error.textContent = "Incorrect password. Please try again.";
                 error.style.opacity = "1";
             }
@@ -30,8 +36,4 @@
     </div>
 </body>
 </html>
-        <button onclick="validatePassword()" class="neon-button">Submit</button>
-        <p id="error" class="error-message"></p>
-    </div>
-</body>
-</html>
+
